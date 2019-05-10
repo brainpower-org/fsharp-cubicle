@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  ocaml-cubicle:
+    build: .
+    image: brainpower/fsharp-cubicle:code-1.939-share-1.0.125
+    volumes:
+      - .:/repo
+    working_dir: /repo
+    ports:
+      - '8443:8443'
+    command: code-server --allow-http --no-auth
