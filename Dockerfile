@@ -12,5 +12,7 @@ RUN apt-get install dotnet-sdk-2.2 fsharp -y
 
 RUN ext install ms-vscode.csharp
 RUN ext install Ionide.Ionide-fsharp
+RUN ext install paolodellepiane.fantomas-fmt
 	 
-
+ENV PATH="/root/.dotnet/tools:${PATH}"
+RUN dotnet tool install -g fantomas-tool
